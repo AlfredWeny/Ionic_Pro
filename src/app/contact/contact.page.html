@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center">
+      Liste des Contacts
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="addContact()">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of contacts">
+      <ion-card>
+      <ion-card-content>
+      <ion-item lines="insert" button> 
+        <ion-avatar slot="start">
+          <img src="../../assets/avatar.jpg">
+        </ion-avatar>
+        <ion-button slot="end" color="danger" (click)="onRemove(item)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+        <ion-label>
+          <h2>{{item.name}}</h2>
+          <h3>{{item.telephone}}</h3>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+      <ion-item-options  color="secondary">
+        <ion-icon name="checkmark" slot="end"></ion-icon>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

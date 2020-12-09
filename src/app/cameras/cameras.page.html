@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center">
+      TEST Camera
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+ <img src="{{imgURL}}">
+  <ion-fab vertical="bottom" horizontal="start">
+        <ion-fab-button (click)="getGallery()" color="danger">
+          <ion-icon name="image-outline"></ion-icon>
+        </ion-fab-button>
+
+  </ion-fab>
+
+  <ion-fab vertical="bottom" title="get camera" horizontal="end">
+    <ion-fab-button (click)="getCamera()" color="danger">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
